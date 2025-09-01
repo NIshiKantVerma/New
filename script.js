@@ -13,7 +13,7 @@ noBtn.addEventListener("click", () => {
     noCount++;
     if (noCount === 1) {
         mainText.innerHTML = 'Soch lo ache se! <span>🤔</span>';
-        subText.textContent = 'Itni jldi mtt bolo😉';
+        subText.textContent = 'itte jldi mtt bolo😉';
     } else if (noCount === 2) {
         mainText.innerHTML = 'Ek aur baar Soch lo! <span>😠</span>';
         subText.textContent = 'kyu aisa kr rahi ho 😟';
@@ -21,18 +21,27 @@ noBtn.addEventListener("click", () => {
         mainText.innerHTML = 'Ye galat hai! <span>🥺</span>';
         subText.textContent = 'ek mauka or de do 🙏';
     }
-    
 });
 
 noBtn.addEventListener("mouseover", () => {
     if (noCount >= 4) {
-        const container = document.querySelector(".container");
-        const maxLeft = container.offsetWidth - noBtn.offsetWidth;
-        const maxTop = container.offsetHeight - noBtn.offsetHeight - 40;
-        const x = Math.floor(Math.random() * maxLeft);
-        const y = Math.floor(Math.random() * maxTop) + 60;
-        noBtn.style.position = "absolute";
-        noBtn.style.left = `${x}px`;
-        noBtn.style.top = `${y}px`;
+        moveNoButtonRandomly();
     }
 });
+
+noBtn.addEventListener("touchstart", () => {
+    if (noCount >= 4) {
+        moveNoButtonRandomly();
+    }
+});
+
+function moveNoButtonRandomly() {
+    const container = document.querySelector(".container");
+    const maxLeft = container.offsetWidth - noBtn.offsetWidth;
+    const maxTop = container.offsetHeight - noBtn.offsetHeight - 40;
+    const x = Math.floor(Math.random() * maxLeft);
+    const y = Math.floor(Math.random() * maxTop) + 60;
+    noBtn.style.position = "absolute";
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+}
