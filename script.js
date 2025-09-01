@@ -13,7 +13,7 @@ noBtn.addEventListener("click", () => {
     noCount++;
     if (noCount === 1) {
         mainText.innerHTML = 'Soch lo ache se! <span>🤔</span>';
-        subText.textContent = 'itte jldi mtt bolo😉';
+        subText.textContent = 'Itni jldi mtt bolo😉';
     } else if (noCount === 2) {
         mainText.innerHTML = 'Ek aur baar Soch lo! <span>😠</span>';
         subText.textContent = 'kyu aisa kr rahi ho 😟';
